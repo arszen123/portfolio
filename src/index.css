@@ -5,9 +5,40 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media print {
+  body {
+    overflow: initial;
+  }
+  #menu {
+    display: none;
+  }
+  #content {
+    overflow: initial;
+  }
+  #resume-top {
+    display: initial !important;
+  }
+  #resume-actions {
+    display: none !important;
+  }
+  .chakra-badge {
+    color: var(--chakra-colors-primary-500) !important;
+    background-color: initial !important;
+    margin: 1 !important;
+    padding: 0 !important;
+  }
+  .chakra-badge::after {
+    content: ",";
+  }
+  .chakra-badge:last-child::after {
+    content: "";
+  }
 }
