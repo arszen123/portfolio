@@ -127,6 +127,7 @@ export const resume: Resume = {
     'PHP',
     'Node.js',
     'Express',
+    'NestJS',
     'PostgreSQL',
     'MongoDB',
     'GraphQL',

@@ -17,7 +17,7 @@ export const Resume: React.FC = () => (
     >
       <ContactComponent />
     </Box>
-    <Box>
+    <Box id="work">
       <Heading as="h2" size="lg" color="primary.500">
         Work Experience
       </Heading>
@@ -28,7 +28,7 @@ export const Resume: React.FC = () => (
       </Box>
     </Box>
     <Divider bgColor="primary.500" mt={4} mb={4} />
-    <Box>
+    <Box id="education">
       <Heading as="h2" size="lg" color="primary.500">
         Education
       </Heading>
@@ -39,7 +39,7 @@ export const Resume: React.FC = () => (
       </Box>
     </Box>
     <Divider bgColor="primary.500" mt={4} mb={4} />
-    <Box>
+    <Box id="skills">
       <Heading as="h2" size="lg" color="primary.500">
         Skills
       </Heading>
@@ -59,8 +59,8 @@ export const Resume: React.FC = () => (
     {!!resume.awards && (
     <>
       <Divider bgColor="primary.500" mt={4} mb={4} />
-      <Box>
-        <Heading fontWeight="bold" fontSize="2xl" color="primary.500" pb={2}>
+      <Box id="awards">
+        <Heading as="h2" size="lg" color="primary.500">
           Awards
         </Heading>
         {resume.awards.map((award, idx) => (

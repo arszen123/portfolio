@@ -19,8 +19,10 @@ export const About: React.FC = () => (
       </Heading>
       <Text
         as="h3"
-        fontSize="lg"
+        fontSize="xl"
         fontWeight="semibold"
+        bgGradient="linear(to-r, primary.500, gray.200)"
+        bgClip="text"
       >
         here is who I am & what I do.
       </Text>

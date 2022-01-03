@@ -26,11 +26,9 @@ export const profile: Profile = {
   that improves the lives of people.
   I have a background in mathematics and computer science.`,
   social: {
-    facebook: 'https://facebook.com/ali.arszen',
     linkedin: 'https://linkedin.com/in/ali-arszen',
-    twitter: 'https://twitter.com/arsenali',
-    medium: 'https://medium.com/@arsen.ali',
     github: 'https://github.com/arszen123',
+    medium: 'https://medium.com/@arsen.ali',
   },
-  portfolioUrl: 'http://localhost:3000',
+  portfolioUrl: 'https://aliarsen.com',
 };
