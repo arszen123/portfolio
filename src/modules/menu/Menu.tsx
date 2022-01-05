@@ -8,8 +8,9 @@ import {
   FaGithub, FaLinkedin, FaMedium, FaTwitter,
 } from 'react-icons/fa';
 import { IconType } from 'react-icons';
-import { profile, Social } from '../../data/profile';
+import { Social } from '../../interfaces/profile';
 import { RouterButton } from './components/RouterButton';
+import { useResume } from '../../resume.context';
 
 const ICONS: {
   [K in keyof Required<Social>]: IconType;
@@ -23,6 +24,7 @@ const ICONS: {
 };
 
 export const Menu: React.FC = () => {
+  const { profile } = useResume();
   const avatarSize = useBreakpointValue({ base: 'lg', md: 'xl' });
 
   return (

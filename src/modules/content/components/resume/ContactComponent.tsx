@@ -3,9 +3,13 @@ import {
   Avatar, Box, Center, Icon, Link, Stack, Text,
 } from '@chakra-ui/react';
 import { FaGlobe } from 'react-icons/fa';
-import { profile } from '../../../../data/profile';
+import { Profile } from '../../../../interfaces/profile';
 
-export const ContactComponent: React.FC = () => (
+type ContactProps = {
+  profile: Profile;
+};
+
+export const ContactComponent: React.FC<ContactProps> = ({ profile }) => (
   <>
     <Stack
       direction="row"

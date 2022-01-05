@@ -5,7 +5,7 @@ import {
   Box, Divider, Icon, Link, Stack, Text,
 } from '@chakra-ui/react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-import { Project } from '../../../../data/projects';
+import { Project } from '../../../../interfaces/project';
 
 export const ProjectComponent: React.FC<{ project: Project }> = ({
   project,
