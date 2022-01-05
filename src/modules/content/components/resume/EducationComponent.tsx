@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
-import { Education } from '../../../../data/resume';
+import { Education } from '../../../../interfaces/resume';
 
 export const EducationComponent: React.FC<{ education: Education }> = ({
   education,

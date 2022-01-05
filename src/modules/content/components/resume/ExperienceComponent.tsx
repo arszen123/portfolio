@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { Badge, Box, Text } from '@chakra-ui/react';
-import { Experience } from '../../../../data/resume';
+import { Experience } from '../../../../interfaces/resume';
 
 export const ExperienceComponent: React.FC<{ experience: Experience }> = ({
   experience,
