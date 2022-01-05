@@ -17,6 +17,11 @@ To change the primary color of the site, you can change the `primary` color in t
 
 ### Data
 
-The displayed data on the site can be modified in files available in the [src/data](./src/data) directory.
+The displayed data on the site can be modified in the `src/resume.ts` file. See the example [src/resume.example.ts](src/resume.example.ts) for more information.
 
-The meta tags and the website title can be modified through environment variables. See [.env](./.env) for the available variables.
+The meta tags and the website title can be modified through environment variables. See [.env.example](./.env.example) for the available variables.
+
+## Before starting in development or deploying
+
+1. Create an `src/resume.ts` file based on the [src/resume.example.ts](src/resume.example.ts) file.
+1. Set the environment variables listed in the [.env.example](./.env.example) file.

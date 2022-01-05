@@ -17,18 +17,3 @@ export type Social = {
   dev?: `https://dev.to/${string}`;
   github?: `https://github.com/${string}`;
 };
-
-export const profile: Profile = {
-  name: 'Arsen Ali',
-  position: 'Software Engineer',
-  profilePicture: '',
-  description: `I am a software engineer with a passion for building software
-  that improves the lives of people.
-  I have a background in mathematics and computer science.`,
-  social: {
-    linkedin: 'https://linkedin.com/in/ali-arszen',
-    github: 'https://github.com/arszen123',
-    medium: 'https://medium.com/@arsen.ali',
-  },
-  portfolioUrl: 'https://aliarsen.com',
-};
