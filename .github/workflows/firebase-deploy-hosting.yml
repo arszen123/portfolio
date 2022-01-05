@@ -6,9 +6,6 @@ on:
   push:
     branches:
       - live
-  pull_request:
-    branches:
-      - live
 
 jobs:
   build_and_deploy:
@@ -27,10 +24,10 @@ jobs:
         uses: google-github-actions/setup-gcloud@v0
 
       - name: Fetch resume
-        run: gcloud cp gs://${{ secrets.GCP_BUCKET }}/resume.ts src/resume.ts
+        run: gsutil cp gs://${{ secrets.GCP_BUCKET }}/resume.ts src/resume.ts
 
       - name: Fetch environment variables
-        run: gcloud cp gs://${{ secrets.GCP_BUCKET }}/.env .
+        run: gsutil cp gs://${{ secrets.GCP_BUCKET }}/.env .
 
       - name: Build
         run: npm ci && npm run build
