@@ -4,8 +4,9 @@ import {
   Box, Center, Heading, Link, Text,
 } from '@chakra-ui/react';
 import { useResume } from '../../../resume.context';
+import withTracker from '../hocs/with-tracking';
 
-export const About: React.FC = () => {
+const About: React.FC = () => {
   const { profile } = useResume();
 
   return (
@@ -60,3 +61,5 @@ export const About: React.FC = () => {
     </Center>
   );
 };
+
+export default withTracker(About);
