@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { About } from './pages/About';
-import { Projects } from './pages/Projects';
-import { Resume } from './pages/Resume';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Resume from './pages/Resume';
 
 export const Content: React.FC = () => (
   <Routes>
