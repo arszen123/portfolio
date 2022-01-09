@@ -7,6 +7,8 @@ type ResponseStatus = {
   items: Item[];
 };
 
+let cachedItems: Item[] = [];
+
 export const useBlogPosts = (mediumUrl: string) => {
   const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${mediumUrl}`;
   const [status, setStatus] = useState<ResponseStatus>({
@@ -15,6 +17,15 @@ export const useBlogPosts = (mediumUrl: string) => {
   });
 
   useEffect(() => {
+    if (cachedItems.length > 0) {
+      setStatus({
+        loading: false,
+        items: cachedItems,
+      });
+
+      return;
+    }
+
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data: FeedResponse) => {
@@ -27,6 +38,7 @@ export const useBlogPosts = (mediumUrl: string) => {
           error = data.message;
         }
 
+        cachedItems = items;
         setStatus({
           loading: false,
           items,

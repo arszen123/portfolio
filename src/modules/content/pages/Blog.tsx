@@ -8,13 +8,14 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import { BlogCard } from '../components/blog/BlogCard';
+import withTracker from '../hocs/with-tracking';
 import { useBlogPosts } from '../hooks/blog-posts';
 
 type BlogProps = {
   mediumUrl: string;
 };
 
-export const Blog: React.FC<BlogProps> = ({ mediumUrl }) => {
+const Blog: React.FC<BlogProps> = ({ mediumUrl }) => {
   const mediumPage = mediumUrl.replace('/feed', '');
   const { loading, items, error } = useBlogPosts(mediumUrl);
 
@@ -63,3 +64,5 @@ export const Blog: React.FC<BlogProps> = ({ mediumUrl }) => {
     </Box>
   );
 };
+
+export default withTracker(Blog);

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { About } from './pages/About';
-import { Blog } from './pages/Blog';
-import { Projects } from './pages/Projects';
-import { Resume } from './pages/Resume';
+import About from './pages/About';
+import Blog from './pages/Blog';
+import Projects from './pages/Projects';
+import Resume from './pages/Resume';
 
 const mediumUrl = process.env.REACT_APP_MEDIUM_FEED_URL;
 
