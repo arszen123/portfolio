@@ -23,6 +23,8 @@ const ICONS: {
   github: FaGithub,
 };
 
+const mediumUrl = process.env.REACT_APP_MEDIUM_FEED_URL;
+
 export const Menu: React.FC = () => {
   const { profile } = useResume();
   const avatarSize = useBreakpointValue({ base: 'lg', md: 'xl' });
@@ -57,7 +59,11 @@ export const Menu: React.FC = () => {
       >
         {profile.name}
       </Text>
-      <Stack direction={{ base: 'row', xl: 'column' }} m="auto">
+      <Stack
+        direction={{ base: 'row', xl: 'column' }}
+        m="auto"
+        maxW="100%"
+      >
         <RouterButton to="/" colorScheme="primary">About</RouterButton>
         <RouterButton
           to="/projects"
@@ -65,6 +71,14 @@ export const Menu: React.FC = () => {
         >
           Projects
         </RouterButton>
+        {!!mediumUrl && (
+        <RouterButton
+          to="/blog"
+          colorScheme="primary"
+        >
+          Blog
+        </RouterButton>
+        )}
         <RouterButton to="/resume" colorScheme="primary">Resume</RouterButton>
       </Stack>
       <Spacer mt={4} />
