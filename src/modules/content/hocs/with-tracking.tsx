@@ -18,13 +18,13 @@ const withTracker: WithTracker = (WrappedComponent, options = {}) => {
     ReactGA.send('pageview');
   };
 
-  const HOC: React.FC = () => {
+  const HOC: React.FC = (props) => {
     const location = useLocation();
     useEffect(() => trackPage(location.pathname), [
       location.pathname,
     ]);
 
-    return <WrappedComponent />;
+    return <WrappedComponent {...props} />;
   };
 
   return HOC;

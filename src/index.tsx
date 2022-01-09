@@ -8,7 +8,10 @@ import App from './App';
 import theme from './theme';
 
 if (process.env.REACT_APP_MEASUREMENT_ID) {
-  ReactGA.initialize(process.env.REACT_APP_MEASUREMENT_ID);
+  ReactGA.initialize(
+    process.env.REACT_APP_MEASUREMENT_ID,
+    { testMode: process.env.NODE_ENV !== 'production' },
+  );
 }
 
 ReactDOM.render(
