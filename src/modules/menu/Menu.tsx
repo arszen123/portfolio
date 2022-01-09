@@ -59,7 +59,11 @@ export const Menu: React.FC = () => {
       >
         {profile.name}
       </Text>
-      <Stack direction={{ base: 'row', xl: 'column' }} m="auto">
+      <Stack
+        direction={{ base: 'row', xl: 'column' }}
+        m="auto"
+        maxW="100%"
+      >
         <RouterButton to="/" colorScheme="primary">About</RouterButton>
         <RouterButton
           to="/projects"
