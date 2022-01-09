@@ -2,16 +2,27 @@
 import {
   Badge, Box, Divider, Heading, Icon, IconButton, Text,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaFileDownload } from 'react-icons/fa';
+import ReactGa from 'react-ga4';
 import { Education, Experience } from '../../../interfaces/resume';
 import { useResume } from '../../../resume.context';
 import { ContactComponent } from '../components/resume/ContactComponent';
 import { EducationComponent } from '../components/resume/EducationComponent';
 import { ExperienceComponent } from '../components/resume/ExperienceComponent';
+import withTracker from '../hocs/with-tracking';
 
-export const Resume: React.FC = () => {
+const Resume: React.FC = () => {
   const { resume, profile } = useResume();
+
+  useEffect(() => {
+    const listener = () => ReactGa.event('cv_download');
+    window.addEventListener('afterprint', listener);
+
+    return () => {
+      window.removeEventListener('afterprint', listener);
+    };
+  });
 
   return (
     <Box p={2}>
@@ -95,3 +106,5 @@ export const Resume: React.FC = () => {
     </Box>
   );
 };
+
+export default withTracker(Resume);
