@@ -1,4 +1,3 @@
 # https://www.robotstxt.org/robotstxt.html
-# You shall not pass!
 User-agent: *
-Disallow: /
+Allow: /
