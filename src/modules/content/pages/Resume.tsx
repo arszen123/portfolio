@@ -31,6 +31,7 @@ const Resume: React.FC = () => {
         display="none"
       >
         <ContactComponent profile={profile} />
+        <Divider bgColor="primary.500" mt={4} mb={4} />
       </Box>
       <Box id="work">
         <Heading as="h2" size="lg" color="primary.500">
