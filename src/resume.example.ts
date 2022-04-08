@@ -28,7 +28,7 @@ export const resume: CompositeResume = {
         company: 'Test Company',
         position: 'Software Engineer',
         location: 'Test Location',
-        description: 'Test Description',
+        description: 'Test Description.',
         startDate: 'Jan 2019',
         endDate: 'Jan 2021',
         technologies: ['PHP', 'Javascript', 'JQuery', 'Vue'],
