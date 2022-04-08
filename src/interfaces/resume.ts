@@ -2,7 +2,8 @@ export type Experience = {
   company: string;
   position: string;
   location: string;
-  description: string;
+  description: `${string}.`;
+  tasks?: string[];
   startDate: string;
   endDate: string;
   technologies: string[];

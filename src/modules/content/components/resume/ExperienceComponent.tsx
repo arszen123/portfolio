@@ -1,6 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import { Badge, Box, Text } from '@chakra-ui/react';
+import {
+  Badge, Box, ListItem, Text, UnorderedList,
+} from '@chakra-ui/react';
 import { Experience } from '../../../../interfaces/resume';
 
 export const ExperienceComponent: React.FC<{ experience: Experience }> = ({
@@ -27,6 +29,14 @@ export const ExperienceComponent: React.FC<{ experience: Experience }> = ({
       {experience.location}
     </Text>
     <Text>{experience.description}</Text>
+    {!!experience.tasks && (
+      <>
+        <Text fontWeight="semibold">Tasks:</Text>
+        <UnorderedList pl={2}>
+          {experience.tasks.map((task) => <ListItem>{task}</ListItem>)}
+        </UnorderedList>
+      </>
+    )}
     <Box>
       <Text fontWeight="semibold">Technologies:</Text>
       {experience.technologies.map((technology, idx) => (
