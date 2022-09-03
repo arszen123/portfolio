@@ -7,6 +7,10 @@ export type Profile = {
   quote?: string;
   quoteAuthor?: string;
   portfolioUrl: string;
+  contact?: {
+    email?: `${string}@${string}.${string}`;
+    phone?: string;
+  }
 };
 
 export type Social = {

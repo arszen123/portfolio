@@ -1,6 +1,7 @@
 import {
   Badge,
   Box,
+  Center,
   Image,
   LinkBox,
   LinkOverlay,
@@ -30,50 +31,52 @@ export const BlogCard: React.FC<BlogCardProps> = ({ item }) => {
   }).substring(0, 180)}...`;
 
   return (
-    <LinkBox>
-      <Stack
-        maxW="xl"
-        borderWidth="1px"
-        borderRadius="lg"
-        overflow="hidden"
-      >
-        <Image src={item.thumbnail} alt={item.title} />
+    <Center>
+      <LinkBox>
+        <Stack
+          maxW={['xs', 'sm', 'xl']}
+          borderWidth="1px"
+          borderRadius="lg"
+          overflow="hidden"
+        >
+          <Image src={item.thumbnail} alt={item.title} />
 
-        <Box>
-          <Box p="6">
-            <Box
-              mt="1"
-              fontWeight="semibold"
-              as="h2"
-              fontSize="xl"
-              lineHeight="tight"
-              isTruncated
-            >
-              <LinkOverlay href={item.link} isExternal>
-                {item.title}
-              </LinkOverlay>
-            </Box>
+          <Box>
+            <Box p="6">
+              <Box
+                mt="1"
+                fontWeight="semibold"
+                as="h2"
+                fontSize="xl"
+                lineHeight="tight"
+                isTruncated
+              >
+                <LinkOverlay href={item.link} isExternal>
+                  {item.title}
+                </LinkOverlay>
+              </Box>
 
-            <Box dangerouslySetInnerHTML={{ __html: description }} />
+              <Box dangerouslySetInnerHTML={{ __html: description }} />
 
-            <Box mt="2" alignItems="center">
-              {item.categories
-                .map((category) => (
-                  <Badge
-                    bgColor="primary.500"
-                    color="primary.50"
-                    borderRadius="full"
-                    p={1}
-                    m={0.5}
-                    key={category}
-                  >
-                    {category}
-                  </Badge>
-                ))}
+              <Box mt="2" alignItems="center">
+                {item.categories
+                  .map((category) => (
+                    <Badge
+                      bgColor="primary.500"
+                      color="primary.50"
+                      borderRadius="full"
+                      p={1}
+                      m={0.5}
+                      key={category}
+                    >
+                      {category}
+                    </Badge>
+                  ))}
+              </Box>
             </Box>
           </Box>
-        </Box>
-      </Stack>
-    </LinkBox>
+        </Stack>
+      </LinkBox>
+    </Center>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { CompositeResume } from './interfaces/composite-resume';
 import { resume } from './resume';
 
 const Resume = React.createContext(resume);
@@ -10,4 +11,4 @@ export const ResumeProvider: React.FC = ({ children }) => (
 );
 export const ResumeConsumer = Resume.Consumer;
 
-export const useResume = () => React.useContext(Resume);
+export const useResume = (): CompositeResume => React.useContext(Resume);

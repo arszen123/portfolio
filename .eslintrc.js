@@ -22,6 +22,7 @@ module.exports = {
     'react',
     '@typescript-eslint',
   ],
+  ignorePatterns: ["src/resume.ts"],
   rules: {
     'import/prefer-default-export': 0,
     'no-useless-constructor': 'off',
@@ -45,5 +46,6 @@ module.exports = {
     // ],
     'max-len': ['error', { code: 80 }],
     'newline-before-return': 'error',
+    'react/require-default-props': 'off',
   },
 };

@@ -31,7 +31,7 @@ export const ExperienceComponent: React.FC<{ experience: Experience }> = ({
     <Text>{experience.description}</Text>
     {!!experience.tasks && (
       <>
-        <Text fontWeight="semibold">Tasks:</Text>
+        <Text fontWeight="semibold">Responsibilities:</Text>
         <UnorderedList pl={2}>
           {experience.tasks.map((task) => <ListItem>{task}</ListItem>)}
         </UnorderedList>
